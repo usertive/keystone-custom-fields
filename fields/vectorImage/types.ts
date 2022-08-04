@@ -4,4 +4,4 @@ export type VectorImageMetadata = FileMetadata;
 
 export type VectorImageData = {storage: string} & VectorImageMetadata;
 
-export type VectorImageOutputType = VectorImageMetadata & {url: string, inlineCode: string};
+export type VectorImageOutputType = VectorImageMetadata & {url: string};

@@ -24,7 +24,6 @@ type VectorImageFieldOutput {
   filename: String!
   filesize: Int!
   url: String!
-  inlineCode: String!
 }
 
 input UserWhereUniqueInput {

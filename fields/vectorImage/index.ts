@@ -14,7 +14,6 @@ import {FileData} from '@keystone-6/core/dist/declarations/src/types/context';
 import path from 'node:path';
 import {readFile as readFileAsync} from 'node:fs/promises';
 import {uploadsDirectoryPath} from '../../constats';
-import {VectorImageValue} from './views/controller';
 
 export const userInputError = (msg: string) => new ApolloError(`Input error: ${msg}`, 'KS_USER_INPUT_ERROR');
 
@@ -51,15 +50,6 @@ const VectorImageFieldOutput = graphql.object<Partial<VectorImageData>>()({
       type: graphql.nonNull(graphql.String),
       resolve(data, args, context) {
         return context.files(data.storage).getUrl(data.filename);
-      },
-    }),
-    inlineCode: graphql.field({
-      type: graphql.nonNull(graphql.String),
-      async resolve(data, _args, context): Promise<string> {
-        console.debug('context', context);
-
-        const filePath: string = path.join(uploadsDirectoryPath, data.filename);
-        return await readFileAsync(filePath, {encoding: 'utf-8'});
       },
     }),
   }),
