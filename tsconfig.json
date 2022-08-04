@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": ["node_modules", ".keystone/admin"]
+}

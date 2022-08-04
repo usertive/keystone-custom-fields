@@ -1,0 +1,29 @@
+{
+  "name": "keystone-svg-field",
+  "version": "1.0.0",
+  "description": "Keystone CMS",
+  "author": "Usertive",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "keystone dev",
+    "start": "keystone start",
+    "build": "keystone build",
+    "postinstall": "keystone postinstall",
+    "clear-storage": "rimraf ./uploads/* ./database/sqlite.db"
+  },
+  "dependencies": {
+    "@keystone-6/auth": "^4.0.0",
+    "@keystone-6/core": "^2.1.0",
+    "@keystone-6/fields-document": "^4.0.1",
+    "dotenv": "^16.0.1",
+    "yup": "^0.32.11",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "@types/node": "^16.11.47",
+    "rimraf": "^3.0.2"
+  }
+}
