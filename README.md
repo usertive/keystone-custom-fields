@@ -59,7 +59,7 @@
 
 > #### How it works:
 >
-> `vectorImage` field behaves like standard image on front-end, but treated as `file` on back-end.
+> `vectorImage` field behaves like standard `image` on front-end, but is treated as a `file` on back-end.
 
 ---
 
