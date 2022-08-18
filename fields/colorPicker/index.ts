@@ -57,7 +57,7 @@ export const colorPicker = <ListTypeInfo extends BaseListTypeInfo>(
         ...config.hooks,
         async validateInput(args) {
           const val = args.resolvedData[meta.fieldKey];
-          if (val === null && (validation?.isRequired || !isNullable)) {
+          if(val === null && (validation?.isRequired || !isNullable)) {
             args.addValidationError(`${fieldLabel} is required`);
           }
 
@@ -78,24 +78,13 @@ export const colorPicker = <ListTypeInfo extends BaseListTypeInfo>(
             defaultValue: config.graphql?.create?.isNonNull ? defaultValue : undefined,
           }),
           resolve(val) {
-            if (val === undefined) {
+            if(val === undefined) {
               return defaultValue ?? null;
             }
             return val;
           },
         },
-        update: {
-          arg: graphql.arg({
-            type: config.graphql?.create?.isNonNull ? graphql.nonNull(graphql.String) : graphql.String,
-            defaultValue: config.graphql?.create?.isNonNull ? defaultValue : undefined,
-          }),
-          resolve(val) {
-            if (val === undefined) {
-              return defaultValue ?? null;
-            }
-            return val;
-          },
-        },
+        update: {arg: graphql.arg({type: graphql.String})},
         orderBy: {arg: graphql.arg({type: orderDirectionEnum})},
       },
       output: graphql.field({
